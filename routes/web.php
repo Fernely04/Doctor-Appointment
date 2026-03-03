@@ -16,7 +16,6 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    // Rutas para el módulo de soporte y tickets
-    // Permitimos al usuario listar los tickets y crear o enviar un nuevo ticket
+    // Support routes
     Route::resource('support', App\Http\Controllers\TicketController::class)->only(['index', 'create', 'store']);
 });
