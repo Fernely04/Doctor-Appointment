@@ -15,4 +15,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    // Support routes
+    Route::resource('support', App\Http\Controllers\TicketController::class)->only(['index', 'create', 'store']);
 });
